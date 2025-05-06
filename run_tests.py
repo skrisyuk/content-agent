@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 
 def run_tests_in_directory(directory):
     """
@@ -10,7 +11,7 @@ def run_tests_in_directory(directory):
             if file.endswith('.py'):
                 file_path = os.path.join(root, file)
                 print(f"Running {file_path}")
-                subprocess.run(['python', file_path], check=True)
+                subprocess.run([sys.executable, file_path], check=True)
 
 if __name__ == "__main__":
     tools_directory = 'tools'
